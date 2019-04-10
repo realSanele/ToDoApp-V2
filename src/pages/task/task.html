@@ -1,0 +1,29 @@
+<!-- <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+    <div class="flb">
+      <div class="Aligner-item Aligner-item--top"></div>
+      <div class="pic"><img src="../../assets/imgs/hd1.jpg"></div>
+      <div class="Aligner-item Aligner-item--bottom"></div>
+    </div>
+  </div> -->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>Task List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <ion-list>
+    <!-- <button ion-item *ngFor="let note of notes | async" (click)="openModal()"> -->
+    <button ion-item *ngFor="let note of notes | async" (click)="getNote(note.createDate)">
+      <b>{{note.title}}</b>
+      <span class="date">{{ note.date }}</span>
+    </button>
+  </ion-list>
+  <!--btn with an onclick listener-->
+  <button ion-button full (click)="addNote()">Add Note</button>
+
+</ion-content>

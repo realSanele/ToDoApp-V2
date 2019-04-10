@@ -1,0 +1,24 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Task Details</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()"><b>X</b></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<h3 text-center>To-do Details</h3>
+<ion-list>
+    <button ion-item *ngFor="let note of notes | async" (click)="openModal()">
+    
+     <b>{{note.title}}</b>
+     <span class="date">{{ note.date }}</span>
+    
+      </button>
+  </ion-list>
+</ion-content>

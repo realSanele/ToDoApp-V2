@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>Task Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title text-center>
+        <u>{{ note.title }}</u>
+      </ion-card-title>
+      <div class="date">
+        Date: <b>{{ note.date }}</b>
+        <small><span>Added @</span>  <b>{{ note.time }}</b></small>
+      </div><hr />
+      <div> Content:<b>{{ note.content }}</b></div>
+    </ion-card-content>
+    <ion-footer>
+      <button ion-button color="danger" block (click)="deleteNote(note.createDate)">
+        Delete Note
+      </button>
+    </ion-footer>
+  </ion-card>
+</ion-content>
